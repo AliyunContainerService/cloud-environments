@@ -1,1 +1,34 @@
 # Override configuration from https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml
+
+docker-registry:
+  enabled: false
+  persistence:
+    storageClass: "alicloud-disk-available"
+
+nexus:
+  enabled: true
+  persistence:
+    storageClass: "alicloud-disk-available"
+    size: 20Gi
+
+chartmuseum:
+  persistence:
+    storageClass: "alicloud-disk-available"
+    size: 20Gi
+
+jenkins:
+  Servers:
+    Global:
+      EnvVars:
+        DOCKER_REGISTRY: "registry.cn-beijing.aliyuncs.com"
+  Persistence:
+    StorageClass: "alicloud-disk-available"
+    Size: 40Gi
+
+monocular:
+  mongodb:
+    persistence:
+      enabled: true
+      size: 20Gi
+      storageClass: "alicloud-disk-available"
+
