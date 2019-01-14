@@ -7,16 +7,25 @@ docker-registry:
 
 nexus:
   enabled: true
+  image:
+    repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-nexus
+    tag: 0.0.19
   persistence:
     storageClass: "alicloud-disk-available"
     size: 20Gi
 
 chartmuseum:
+  image:
+    repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-chartmuseum
+    tag: v0.7.1
   persistence:
     storageClass: "alicloud-disk-available"
     size: 20Gi
 
 jenkins:
+  Master:
+    Image: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x 
+    ImageTag: 0.0.41
   Servers:
     Global:
       EnvVars:
@@ -26,9 +35,34 @@ jenkins:
     Size: 40Gi
 
 monocular:
+  api:
+    image:
+      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-api
+      tag: v0.7.3
+  ui:
+    image:
+      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-ui
+      tag: v0.7.3
+  prerender:
+    image:
+      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-prerender
+      tag: latest
   mongodb:
+    image:
+      registry: registry.cn-beijing.aliyuncs.com
+      repository: acs-sample/jenkins-x-mongodb
+      tag: 3.6.6-debian-9
     persistence:
       enabled: true
       size: 20Gi
       storageClass: "alicloud-disk-available"
 
+heapster:
+  image:
+    repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-heapster
+    tag: v1.3.0
+
+jx:
+  image:
+    repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-jx
+    tag: 1.3.717
