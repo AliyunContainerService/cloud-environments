@@ -62,8 +62,9 @@ heapster:
     repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-heapster
     tag: v1.3.0
   resizer:
-    repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-heapster-addon-resizer
-    tag: 1.7
+    image:
+      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-heapster-addon-resizer
+      tag: 1.7
 
 jx:
   image:
