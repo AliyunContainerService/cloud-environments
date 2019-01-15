@@ -26,6 +26,7 @@ jenkins:
   Master:
     Image: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x 
     ImageTag: 0.0.41
+    ServiceType: LoadBalancer
   Servers:
     Global:
       EnvVars:
