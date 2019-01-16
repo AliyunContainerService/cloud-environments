@@ -31,6 +31,12 @@ jenkins:
     Global:
       EnvVars:
         DOCKER_REGISTRY: "registry.cn-beijing.aliyuncs.com"
+  Agent:
+    PodTemplates:
+      Maven:
+        Containers:
+          Maven:
+            Image: registry.cn-beijing.aliyuncs.com/haoshuwei/jenkins-x-builder-maven:0.1.185 
   Persistence:
     StorageClass: "alicloud-disk-available"
     Size: 40Gi
