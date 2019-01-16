@@ -2,8 +2,6 @@
 
 docker-registry:
   enabled: false
-  persistence:
-    storageClass: "alicloud-disk-available"
 
 nexus:
   enabled: true
@@ -42,28 +40,7 @@ jenkins:
     Size: 40Gi
 
 monocular:
-  api:
-    image:
-      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-api
-      tag: v0.7.3
-  ui:
-    image:
-      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-ui
-      tag: v0.7.3
-  prerender:
-    image:
-      repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-monocular-prerender
-      tag: latest
-  mongodb:
-    image:
-      registry: registry.cn-beijing.aliyuncs.com
-      repository: acs-sample/jenkins-x-mongodb
-      tag: 3.6.6-debian-9
-    persistence:
-      enabled: true
-      size: 20Gi
-      storageClass: "alicloud-disk-available"
-
+  enabled: false
 heapster:
   image:
     repository: registry.cn-beijing.aliyuncs.com/acs-sample/jenkins-x-heapster
